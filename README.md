@@ -24,19 +24,19 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
-<h2>Provision Azure Resources:</h2>
+<li><strong>Provision Azure Resources:</strong>
 Set up a Domain Controller virtual machine and a Client virtual machine within the same Azure virtual network to ensure proper communication.
 
-<h2>Verify Network Connectivity:</h2>
+<li><strong>Verify Network Connectivity:</strong>
 Confirm network communication between the Client and the Domain Controller to enable domain-related operations.
 
-<h2>Install Active Directory Domain Services:</h2>
+<li><strong>Install Active Directory Domain Services:</strong>
 Deploy the AD DS role on the Domain Controller to create and manage the Active Directory domain.
 
-<h2>Create User Accounts:</h2>
+<li><strong>Create User Accounts:</strong>
 Establish both administrative and standard user accounts within Active Directory to manage access and permissions.
 
-<h2>Join Client to Domain:</h2>
+<li><strong>Join Client to Domain:</strong>
 Configure the Client machine to join the Active Directory domain for centralized authentication and resource management.
 
 <h2>Configure Remote Desktop Access via Group Policy:</h2>
