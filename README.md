@@ -31,26 +31,59 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>Deployment and Configuration Steps</h2>
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+Project Overview
+This project involved the end-to-end setup of a cloud-hosted Active Directory environment using Azure Virtual Machines. I created a Windows Server 2022 Domain Controller and a Windows 10 client, ensured secure network connectivity between them, and configured essential AD components such as user accounts, Organizational Units (OUs), and Group Policy settings.
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+The lab provided hands-on experience with foundational AD tasks and demonstrated my ability to manage identity services in a cloud-based infrastructure.
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+Key Accomplishments
+Deployed Virtual Machines:
+
+Created DC-1 (Domain Controller) and Client-1 (Windows 10) within the same Azure Resource Group and Virtual Network.
+
+Set the Domain Controller’s private IP address as static to ensure stable DNS resolution.
+
+Established Network Connectivity:
+
+Configured firewall rules and validated internal communication using ICMP (ping) between client and server VMs.
+
+Installed and Configured Active Directory:
+
+Installed the Active Directory Domain Services (AD DS) role on DC-1.
+
+Promoted the server to a Domain Controller and set up a new forest (mydomain.com).
+
+Created Organizational Units and User Accounts:
+
+Created OUs: _EMPLOYEES, _ADMINS, and _CLIENTS.
+
+Created a domain admin account (jane_admin) and added it to the Domain Admins group.
+
+Joined Client to the Domain:
+
+Configured Client-1’s DNS to point to DC-1.
+
+Successfully joined the client machine to the domain and moved it into the _CLIENTS OU.
+
+Configured Remote Desktop via Group Policy:
+
+Created and applied a Group Policy Object allowing Remote Desktop access for users in the _EMPLOYEES and _CLIENTS OUs.
+
+Verified policy application using gpupdate /force.
+
+Automated User Provisioning with PowerShell:
+
+Used PowerShell ISE to script the creation of multiple user accounts in Active Directory.
+
+Verified new user accounts and tested domain login functionality from Client-1.
+
+Results
+Successfully deployed a working Active Directory environment in Azure.
+
+Demonstrated ability to manage domain infrastructure, user permissions, and client configuration.
+
+Implemented policy-based remote access and automated user management using PowerShell.
+
+Gained practical experience in Active Directory design, deployment, and administration in a real-world, cloud-hosted environment.
+
+
