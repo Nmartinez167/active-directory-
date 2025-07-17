@@ -24,10 +24,26 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+<h2>Provision Azure Resources:</h2>
+Set up a Domain Controller virtual machine and a Client virtual machine within the same Azure virtual network to ensure proper communication.
+
+<h2>Verify Network Connectivity:</h2>
+Confirm network communication between the Client and the Domain Controller to enable domain-related operations.
+
+<h2>Install Active Directory Domain Services:</h2>
+Deploy the AD DS role on the Domain Controller to create and manage the Active Directory domain.
+
+<h2>Create User Accounts:</h2>
+Establish both administrative and standard user accounts within Active Directory to manage access and permissions.
+
+<h2>Join Client to Domain:</h2>
+Configure the Client machine to join the Active Directory domain for centralized authentication and resource management.
+
+<h2>Configure Remote Desktop Access via Group Policy:</h2>
+Apply Group Policy settings to allow non-administrative users in the _CLIENTS and _EMPLOYEES Organizational Units remote desktop access.
+
+<h2>Automate User Account Creation:</h2>
+Utilize PowerShell ISE scripting to bulk create user accounts and validate access to ensure proper functionality.
 
 <h2>Deployment and Configuration Steps</h2>
 
