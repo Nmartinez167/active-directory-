@@ -43,58 +43,57 @@ Utilize PowerShell ISE scripting to bulk create user accounts and validate acces
 <h2>Deployment and Configuration Steps</h2>
 
 Project Overview
-This project involved the end-to-end setup of a cloud-hosted Active Directory environment using Azure Virtual Machines. I created a Windows Server 2022 Domain Controller and a Windows 10 client, ensured secure network connectivity between them, and configured essential AD components such as user accounts, Organizational Units (OUs), and Group Policy settings.
+<li><strong>This project involved the end-to-end setup of a cloud-hosted Active Directory environment using Azure Virtual Machines. I created a Windows Server 2022 Domain Controller and a Windows 10 client, ensured secure network connectivity between them, and configured essential AD components such as user accounts, Organizational Units (OUs), and Group Policy settings.
 
-The lab provided hands-on experience with foundational AD tasks and demonstrated my ability to manage identity services in a cloud-based infrastructure.
+<li><strong>The lab provided hands-on experience with foundational AD tasks and demonstrated my ability to manage identity services in a cloud-based infrastructure.
 
-Key Accomplishments
-Deployed Virtual Machines:
+<li><strong>Key Accomplishments
+<li><strong>Deployed Virtual Machines:
 
-Created DC-1 (Domain Controller) and Client-1 (Windows 10) within the same Azure Resource Group and Virtual Network.
+<li><strong>Created DC-1 (Domain Controller) and Client-1 (Windows 10) within the same Azure Resource Group and Virtual Network.
 
-Set the Domain Controller’s private IP address as static to ensure stable DNS resolution.
+<li><strong>Set the Domain Controller’s private IP address as static to ensure stable DNS resolution.
 
-Established Network Connectivity:
+<li><strong>Established Network Connectivity:
 
-Configured firewall rules and validated internal communication using ICMP (ping) between client and server VMs.
+<li><strong>Configured firewall rules and validated internal communication using ICMP (ping) between client and server VMs.
 
-Installed and Configured Active Directory:
+<li><strong>Installed and Configured Active Directory:
 
-Installed the Active Directory Domain Services (AD DS) role on DC-1.
+<li><strong>Installed the Active Directory Domain Services (AD DS) role on DC-1.
 
-Promoted the server to a Domain Controller and set up a new forest (mydomain.com).
+<li><strong>Promoted the server to a Domain Controller and set up a new forest (mydomain.com).
 
-Created Organizational Units and User Accounts:
+<li><strong>Created Organizational Units and User Accounts:
 
-Created OUs: _EMPLOYEES, _ADMINS, and _CLIENTS.
+<li><strong>Created OUs: _EMPLOYEES, _ADMINS, and _CLIENTS.
 
-Created a domain admin account (jane_admin) and added it to the Domain Admins group.
+<li><strong Created a domain admin account (jane_admin) and added it to the Domain Admins group.
+      
+<li><strongJoined Client to the Domain:
 
-Joined Client to the Domain:
+<li><strongConfigured Client-1’s DNS to point to DC-1.
 
-Configured Client-1’s DNS to point to DC-1.
+<li><strongSuccessfully joined the client machine to the domain and moved it into the _CLIENTS OU.
 
-Successfully joined the client machine to the domain and moved it into the _CLIENTS OU.
+<li><strongConfigured Remote Desktop via Group Policy:
 
-Configured Remote Desktop via Group Policy:
+<li><strongCreated and applied a Group Policy Object allowing Remote Desktop access for users in the _EMPLOYEES and _CLIENTS OUs.
 
-Created and applied a Group Policy Object allowing Remote Desktop access for users in the _EMPLOYEES and _CLIENTS OUs.
+<li><strongVerified policy application using gpupdate /force.
 
-Verified policy application using gpupdate /force.
+<li><strongAutomated User Provisioning with PowerShell:
 
-Automated User Provisioning with PowerShell:
+<li><strongUsed PowerShell ISE to script the creation of multiple user accounts in Active Directory.
 
-Used PowerShell ISE to script the creation of multiple user accounts in Active Directory.
-
-Verified new user accounts and tested domain login functionality from Client-1.
-
+<li><strongVerified new user accounts and tested domain login functionality from Client-1.
 Results
-Successfully deployed a working Active Directory environment in Azure.
+<li><strongSuccessfully deployed a working Active Directory environment in Azure.
 
-Demonstrated ability to manage domain infrastructure, user permissions, and client configuration.
+<li><strongDemonstrated ability to manage domain infrastructure, user permissions, and client configuration.
 
-Implemented policy-based remote access and automated user management using PowerShell.
+<li><strongImplemented policy-based remote access and automated user management using PowerShell.
 
-Gained practical experience in Active Directory design, deployment, and administration in a real-world, cloud-hosted environment.
+<li><strongGained practical experience in Active Directory design, deployment, and administration in a real-world, cloud-hosted environment.
 
 
