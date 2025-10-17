@@ -53,6 +53,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - ping -t <ip_address>
 
 - On DC-1, enable ICMPv4 (ping) traffic through the Windows Firewall to allow incoming echo requests.
+<img width="1371" height="950" alt="Capture" src="https://github.com/user-attachments/assets/45d85da3-2adf-4cbb-abc1-3be42c911cdd" />
 
 - Return to Client-1 and confirm that the ping is now successful, verifying network connectivity between the client and domain controller.
 
