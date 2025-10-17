@@ -19,81 +19,101 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
-<li><strong>Provision Azure Resources:</strong>
-Set up a Domain Controller virtual machine and a Client virtual machine within the same Azure virtual network to ensure proper communication.
+<h2>Step 1: Provision Azure Resources</h2>
+<ul>
 
-<li><strong>Verify Network Connectivity:</strong>
-Confirm network communication between the Client and the Domain Controller to enable domain-related operations.
+- Deploy a Windows Server 2022 virtual machine to serve as the Domain Controller, and name it DC-1.
 
-<li><strong>Install Active Directory Domain Services:</strong>
-Deploy the AD DS role on the Domain Controller to create and manage the Active Directory domain.
+- Note the Resource Group and Virtual Network (VNet) associated with the Domain Controller for later configuration.
 
-<li><strong>Create User Accounts:</strong>
-Establish both administrative and standard user accounts within Active Directory to manage access and permissions.
+- Configure the network interface (NIC) of DC-1 to use a static private IP address to ensure reliable connectivity.
 
-<li><strong>Join Client to Domain:</strong>
-Configure the Client machine to join the Active Directory domain for centralized authentication and resource management.
+- Create a Windows 10 virtual machine named Client-1 within the same Resource Group and VNet as DC-1.
 
-<h2>Configure Remote Desktop Access via Group Policy:</h2>
-Apply Group Policy settings to allow non-administrative users in the _CLIENTS and _EMPLOYEES Organizational Units remote desktop access.
+- Verify that both DC-1 and Client-1 reside within the same virtual network by using Azure Network Watcher's topology tool.
 
-<h2>Automate User Account Creation:</h2>
-Utilize PowerShell ISE scripting to bulk create user accounts and validate access to ensure proper functionality.
+<h2>Step 2: Verify Connectivity Between Client and Domain Controller</h2>
+<ul>
 
-<h2>Deployment and Configuration Steps</h2>
+- Connect to Client-1 via Remote Desktop, and initiate a continuous ping to DC-1's private IP address
 
-Project Overview
-<li><strong>This project involved the end-to-end setup of a cloud-hosted Active Directory environment using Azure Virtual Machines. I created a Windows Server 2022 Domain Controller and a Windows 10 client, ensured secure network connectivity between them, and configured essential AD components such as user accounts, Organizational Units (OUs), and Group Policy settings.
+  
+<h2>Step 3: Install and Configure Active Directory</h2>
+<ul>
+- Log in to DC-1 and install the Active Directory Domain Services (AD DS) role via Server Manager.
 
-<li><strong>The lab provided hands-on experience with foundational AD tasks and demonstrated my ability to manage identity services in a cloud-based infrastructure.
+- Promote DC-1 to a Domain Controller by creating a new forest, specifying a domain name (e.g., mydomain.com).
 
-<li><strong>Key Accomplishments
-<li><strong>Deployed Virtual Machines:
+- After the promotion process completes, restart the VM and log in using your new domain credentials:
 
-<li><strong>Created DC-1 (Domain Controller) and Client-1 (Windows 10) within the same Azure Resource Group and Virtual Network.
+- mydomain.com\labuser
 
-<li><strong>Set the Domain Controller’s private IP address as static to ensure stable DNS resolution.
+- ping -t <ip_address>
 
-<li><strong>Established Network Connectivity:
+- On DC-1, enable ICMPv4 (ping) traffic through the Windows Firewall to allow incoming echo requests.
 
-<li><strong>Configured firewall rules and validated internal communication using ICMP (ping) between client and server VMs.
-
-<li><strong>Installed and Configured Active Directory:
-
-<li><strong>Installed the Active Directory Domain Services (AD DS) role on DC-1.
-
-<li><strong>Promoted the server to a Domain Controller and set up a new forest (mydomain.com).
-
-<li><strong>Created Organizational Units and User Accounts:
-
-<li><strong>Created OUs: _EMPLOYEES, _ADMINS, and _CLIENTS.
-
-<li><strong Created a domain admin account (jane_admin) and added it to the Domain Admins group.
-      
-<li><strongJoined Client to the Domain:
-
-<li><strongConfigured Client-1’s DNS to point to DC-1.
-
-<li><strongSuccessfully joined the client machine to the domain and moved it into the _CLIENTS OU.
-
-<li><strongConfigured Remote Desktop via Group Policy:
-
-<li><strongCreated and applied a Group Policy Object allowing Remote Desktop access for users in the _EMPLOYEES and _CLIENTS OUs.
-
-<li><strongVerified policy application using gpupdate /force.
-
-<li><strongAutomated User Provisioning with PowerShell:
-
-<li><strongUsed PowerShell ISE to script the creation of multiple user accounts in Active Directory.
-
-<li><strongVerified new user accounts and tested domain login functionality from Client-1.
-Results
-<li><strongSuccessfully deployed a working Active Directory environment in Azure.
-
-<li><strongDemonstrated ability to manage domain infrastructure, user permissions, and client configuration.
-
-<li><strongImplemented policy-based remote access and automated user management using PowerShell.
-
-<li><strongGained practical experience in Active Directory design, deployment, and administration in a real-world, cloud-hosted environment.
+- Return to Client-1 and confirm that the ping is now successful, verifying network connectivity between the client and domain controller.
 
 
+<h2>Step 4: Create Administrative User and Organizational Units in Active Directory</h2>
+<ul>
+- Open Active Directory Users and Computers (ADUC) on DC-1.
+
+- Create the following Organizational Units (OUs) to structure directory objects:
+
+- _EMPLOYEES – for general employee user accounts
+
+- _ADMINS – for administrative accounts
+
+- _CLIENTS – for client-specific resources or users
+
+- Within the _ADMINS OU, create a new user account:
+
+- Full Name: Jane Doe
+
+- Username: jane_admin
+
+- Add jane_admin to the Domain Admins security group to grant administrative privileges.
+
+- Log out of DC-1 and sign back in using the new domain admin account:
+
+- mydomain.com\jane_admin
+
+<h2>Step 5: Join Client-1 to the Domain</h2>
+<ul>
+- In the Azure Portal, update Client-1's DNS server settings to point to DC-1's private IP address.
+
+- Restart Client-1 from the portal to apply the new DNS configuration.
+
+- Log in to Client-1 using the local administrator account (labuser), and join the machine to the domain mydomain.com.
+
+- After a successful domain join, restart the VM and verify that Client-1 now appears in Active Directory Users and Computers (ADUC) under the Computers container.
+
+- (Optional) For better organization, create an OU named _CLIENTS and move Client-1 into it.
+
+<h2>Step 6: Enable Remote Desktop Access for Domain Users via Group Policy</h2>
+<ul>
+- Create and apply a Group Policy Object (GPO) targeting the _CLIENTS and _EMPLOYEES Organizational Units to allow domain users to connect via Remote Desktop.
+
+- This approach ensures centralized management of Remote Desktop settings, eliminating the need for manual configuration on each individual client machine.
+
+- To confirm the policy is applied, run the following command on affected client machines:
+
+<h2>Step 7: Automate User Account Creation with PowerShell and Verify Access</h2>
+<ul>
+- Log in to DC-1 as jane_admin, and launch PowerShell ISE with administrative privileges.
+
+- Write or run a PowerShell script to automate the creation of multiple Active Directory user accounts, specifying the appropriate OU placement for each user.
+
+- After the script executes, open Active Directory Users and Computers (ADUC) to verify that all users have been successfully created in the intended Organizational Unit.
+
+Test account functionality by logging into Client-1 with one of the newly created user credentials to confirm successful domain authentication and Remote Desktop access (if applicable).
+<h2>Conclusion</h2>
+
+This lab demonstrated the end-to-end deployment and configuration of a functional Active Directory environment in Microsoft Azure. We provisioned a Domain Controller and a client virtual machine, configured network settings to enable communication, and installed Active Directory Domain Services (AD DS).
+
+We established a new domain, structured the directory using Organizational Units (OUs), and created both administrative and standard user accounts. The client machine was successfully joined to the domain, and Remote Desktop access was enabled for domain users via Group Policy.
+
+To streamline user management, we utilized PowerShell scripting to automate the creation of multiple AD user accounts and verified access by logging into the client with one of the new accounts.
+
+This hands-on lab provided practical experience in deploying, managing, and securing an Active Directory environment—core skills for any systems administrator or cloud engineer.
