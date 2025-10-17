@@ -26,7 +26,8 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 - Note the Resource Group and Virtual Network (VNet) associated with the Domain Controller for later configuration.
 
-- Configure the network interface (NIC) of DC-1 to use a static private IP address to ensure reliable connectivity.
+- Configure the network interface (NIC) of DC-1 to use a static private IP address to ensure reliable connectivity.<img width="1871" height="796" alt="Screenshot 2025-10-16 082844" src="https://github.com/user-attachments/assets/b6aa37c2-5f8c-4aaa-8039-af05b0275cce" />
+
 
 - Create a Windows 10 virtual machine named Client-1 within the same Resource Group and VNet as DC-1.
 
@@ -34,6 +35,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>Step 2: Verify Connectivity Between Client and Domain Controller</h2>
 <ul>
+<img width="1712" height="882" alt="Screenshot 2025-10-17 132701" src="https://github.com/user-attachments/assets/2b3ee7e0-9e7e-45b6-9334-644137542a59" />
 
 - Connect to Client-1 via Remote Desktop, and initiate a continuous ping to DC-1's private IP address
 
