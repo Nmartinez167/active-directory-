@@ -43,6 +43,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <h2>Step 3: Install and Configure Active Directory</h2>
 <ul>
 - Log in to DC-1 and install the Active Directory Domain Services (AD DS) role via Server Manager.
+<img width="1055" height="766" alt="Capture5" src="https://github.com/user-attachments/assets/b0e033dd-c8e3-4e70-bdd8-60ea09cdb69d" />
 
 - Promote DC-1 to a Domain Controller by creating a new forest, specifying a domain name (e.g., mydomain.com).
 
@@ -69,6 +70,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - _ADMINS – for administrative accounts
 
 - _CLIENTS – for client-specific resources or users
+<img width="531" height="367" alt="Capture7" src="https://github.com/user-attachments/assets/05f4cb7f-aec0-4866-8f69-8625231a8f6a" />
 
 - Within the _ADMINS OU, create a new user account:
 
@@ -77,6 +79,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Username: jane_admin
 
 - Add jane_admin to the Domain Admins security group to grant administrative privileges.
+<img width="591" height="534" alt="Capture8" src="https://github.com/user-attachments/assets/c4d2cc8c-ee1d-4578-a28c-d0bf09656e9f" />
 
 - Log out of DC-1 and sign back in using the new domain admin account:
 
