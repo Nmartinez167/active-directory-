@@ -98,7 +98,8 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - (Optional) For better organization, create an OU named _CLIENTS and move Client-1 into it.
 
 <h2>Step 6: Enable Remote Desktop Access for Domain Users via Group Policy</h2>
-<ul>
+<ul><img width="780" height="497" alt="Screenshot 2025-10-23 135330" src="https://github.com/user-attachments/assets/3f2c30d2-1e12-4111-b176-3b1b2acd0613" />
+
 - Create and apply a Group Policy Object (GPO) targeting the _CLIENTS and _EMPLOYEES Organizational Units to allow domain users to connect via Remote Desktop.
 
 - This approach ensures centralized management of Remote Desktop settings, eliminating the need for manual configuration on each individual client machine.
@@ -110,8 +111,11 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Log in to DC-1 as jane_admin, and launch PowerShell ISE with administrative privileges.
 
 - Write or run a PowerShell script to automate the creation of multiple Active Directory user accounts, specifying the appropriate OU placement for each user.
+<img width="1836" height="978" alt="Capture3" src="https://github.com/user-attachments/assets/46714a87-3e2c-4dcd-8d25-02ac7a8b1976" />
+
 
 - After the script executes, open Active Directory Users and Computers (ADUC) to verify that all users have been successfully created in the intended Organizational Unit.
+<img width="1032" height="711" alt="Capture4" src="https://github.com/user-attachments/assets/49c7de76-fc05-40e8-a75b-c38958c128a2" />
 
 Test account functionality by logging into Client-1 with one of the newly created user credentials to confirm successful domain authentication and Remote Desktop access (if applicable).
 <h2>Conclusion</h2>
