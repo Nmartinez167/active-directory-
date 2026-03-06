@@ -21,8 +21,17 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>Step 1: Provision Azure Resources</h2>
 <ul>
+-First we create a resource group named Active-directory for future reference and we will also create a virtual machine, make sure the azure Virtual machine is set the resource group we just created. "Active-directory"
 
-- Deploy a Windows Server 2022 virtual machine to serve as the Domain Controller, and name it DC-1.
+<img width="948" height="631" alt="Screenshot 2026-03-05 094917" src="https://github.com/user-attachments/assets/c480df36-c0a3-4a40-8b54-2db5850590a3" />
+
+<img width="1066" height="768" alt="Screenshot 2026-03-05 095303" src="https://github.com/user-attachments/assets/edca337a-d8c7-4ee7-8a2e-8087c45c1a30" />
+
+
+- Create a Windows Server 2022 virtual machine to serve as the Domain Controller, and name it DC-1.
+
+<img width="966" height="878" alt="trrrrr" src="https://github.com/user-attachments/assets/3632ef57-efe2-4a64-998c-01250713e160" />
+
 
 - Note the Resource Group and Virtual Network (VNet) associated with the Domain Controller for later configuration.
 
@@ -30,6 +39,8 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 
 - Create a Windows 10 virtual machine named Client-1 within the same Resource Group and VNet as DC-1.
+- 
+<img width="1039" height="803" alt="yyyy" src="https://github.com/user-attachments/assets/2b7193af-07ea-4fad-8c02-7224d724544b" />
 
 - Verify that both DC-1 and Client-1 reside within the same virtual network by using Azure Network Watcher's topology tool.
 
