@@ -28,21 +28,38 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <img width="1066" height="768" alt="Screenshot 2026-03-05 095303" src="https://github.com/user-attachments/assets/edca337a-d8c7-4ee7-8a2e-8087c45c1a30" />
 
 
-- Create a Windows Server 2022 virtual machine to serve as the Domain Controller, and name it DC-1.
-
 <img width="966" height="878" alt="trrrrr" src="https://github.com/user-attachments/assets/3632ef57-efe2-4a64-998c-01250713e160" />
 
+- Create a Windows Server 2022 virtual machine to serve as the Domain Controller, and name it DC-1.
+make sure to set the correct resourse group and region when creating the virtual machine.
 
-- Note the Resource Group and Virtual Network (VNet) associated with the Domain Controller for later configuration.
+<img width="1063" height="907" alt="activednewski" src="https://github.com/user-attachments/assets/df992425-34a9-453d-ad35-18b629dae5f8" />
 
-- Configure the network interface (NIC) of DC-1 to use a static private IP address to ensure reliable connectivity.<img width="1871" height="796" alt="Screenshot 2025-10-16 082844" src="https://github.com/user-attachments/assets/b6aa37c2-5f8c-4aaa-8039-af05b0275cce" />
+Make sure to also set a safe username and password as well to able to login to our virtual machine and later install active directory to it, also be sure to put it in the virtual network we created.
+
+<img width="1098" height="872" alt="nelliii" src="https://github.com/user-attachments/assets/14bae4fc-74a0-4523-9a09-224fee35a5a3" />
+
+<img width="961" height="997" alt="vnet" src="https://github.com/user-attachments/assets/f5d39909-56ed-47c8-b17a-cb702052db00" />
+
+- Create a Windows 11 virtual machine named Client-1 within the same Resource Group and VNet as DC-1
+
+  <img width="1041" height="1007" alt="yujjjjjj" src="https://github.com/user-attachments/assets/683e132d-1ce1-4200-a71f-2dcf84d3b555" />
 
 
-- Create a Windows 10 virtual machine named Client-1 within the same Resource Group and VNet as DC-1.
-- 
-<img width="1039" height="803" alt="yyyy" src="https://github.com/user-attachments/assets/2b7193af-07ea-4fad-8c02-7224d724544b" />
+After our VM is created, set Domain Controller’s (dc-1) NIC Private IP address to be static
+<img
 
-- Verify that both DC-1 and Client-1 reside within the same virtual network by using Azure Network Watcher's topology tool.
+<img width="965" height="1012" alt="image" src="https://github.com/user-attachments/assets/860a7dd0-e03d-4b63-9912-cb3d30a10a72" />
+
+<img width="947" height="1015" alt="image" src="https://github.com/user-attachments/assets/5c2e7bb5-e923-485c-b2da-e3040153e45a" />
+
+<img width="967" height="1007" alt="static" src="https://github.com/user-attachments/assets/029d745d-e64a-4c9b-8ed7-c8970f41f9cd" />
+
+- next we will be logging into our virtual machine (dc-1) our virtual machine we will be using as a domain controller to shut off the windows firewall to ensure connection between both of our virtual machines, this is not recommendedthis is just for demonstration purposes.
+
+
+- After our virtual machines are created, set Client-1’s DNS settings to DC-1’s Private IP address this will alow a connection between both virtual machines.
+
 
 <h2>Step 2: Verify Connectivity Between Client and Domain Controller</h2>
 <ul>
