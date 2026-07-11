@@ -55,7 +55,10 @@ After our VM is created, set Domain Controller’s (dc-1) NIC Private IP address
 
 <img width="967" height="1007" alt="static" src="https://github.com/user-attachments/assets/029d745d-e64a-4c9b-8ed7-c8970f41f9cd" />
 
-- next we will be logging into our virtual machine (dc-1) our virtual machine we will be using as a domain controller to shut off the windows firewall to ensure connection between both of our virtual machines, this is not recommendedthis is just for demonstration purposes.
+- next we will be logging into our virtual machine to (dc-1) using remote desktop connection this is the virtual machine we will be using as a domain controller we do that by taking the I.P adress from our azure portal then inputing the username and password we created earlier.
+
+
+<img width="1711" height="545" alt="ppppppppp" src="https://github.com/user-attachments/assets/9d0e72fa-031d-4115-869c-ba8db848e507" />
 
 
 - After our virtual machines are created, set Client-1’s DNS settings to DC-1’s Private IP address this will alow a connection between both virtual machines.
