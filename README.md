@@ -89,11 +89,8 @@ After our VM is created, set Domain Controller’s (dc-1) NIC Private IP address
 
 -We can see we got a reply from dc-1 confirming a succesfull connection between both virtual machines.
 
-<h2>Step 2: Verify Connectivity Between Client and Domain Controller</h2>
-<ul>
-<img width="1712" height="882" alt="Screenshot 2025-10-17 132701" src="https://github.com/user-attachments/assets/2b3ee7e0-9e7e-45b6-9334-644137542a59" />
+<h2>Step 2: Deploy and install Active Directory</h2>
 
-- Connect to Client-1 via Remote Desktop, and initiate a continuous ping to DC-1's private IP address
 
   
 <h2>Step 3: Install and Configure Active Directory</h2>
