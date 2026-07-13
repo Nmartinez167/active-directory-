@@ -109,6 +109,12 @@ After our VM is created, set Domain Controller’s (dc-1) NIC Private IP address
 
   <img width="1219" height="808" alt="Capture9" src="https://github.com/user-attachments/assets/787f8f4f-ac21-4510-8dcd-c57aef940ab6" />
 
+<img width="1107" height="828" alt="Capture11" src="https://github.com/user-attachments/assets/328964e1-4ed6-43d8-ba65-660c22662479" />
+
+-Once the VM has restarted we log back in using the credentials we created along with mydomain.com\labuser
+
+<img width="981" height="887" alt="nnnnjnjnjnn" src="https://github.com/user-attachments/assets/996c2818-1b05-461e-b0e2-78a426806969" />
+
 <h2>Step 3: </h2>
 
 
