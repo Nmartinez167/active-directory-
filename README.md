@@ -101,24 +101,16 @@ After our VM is created, set Domain Controller’s (dc-1) NIC Private IP address
 
 <img width="1336" height="800" alt="Capture7" src="https://github.com/user-attachments/assets/e997eae4-391c-4924-9016-6af19ae14984" />
 
-  
-<h2>Step 3: Install and Configure Active Directory</h2>
-<ul>
-- Log in to DC-1 and install the Active Directory Domain Services (AD DS) role via Server Manager.
-<img width="1055" height="766" alt="Capture5" src="https://github.com/user-attachments/assets/b0e033dd-c8e3-4e70-bdd8-60ea09cdb69d" />
+ <img width="1318" height="820" alt="Capture8" src="https://github.com/user-attachments/assets/c7c7f8b5-33ae-4a90-ae8e-18457ca999a9" />
 
-- Promote DC-1 to a Domain Controller by creating a new forest, specifying a domain name (e.g., mydomain.com).
+-After successfully installing active directory we will be promoting dc-1 as our actual domain controller.
 
-- After the promotion process completes, restart the VM and log in using your new domain credentials:
+<img width="1891" height="955" alt="Capture10" src="https://github.com/user-attachments/assets/98afb894-9e7e-4125-b86e-2c682015a7c5" />
 
-- mydomain.com\labuser
+  <img width="1219" height="808" alt="Capture9" src="https://github.com/user-attachments/assets/787f8f4f-ac21-4510-8dcd-c57aef940ab6" />
 
-- ping -t <ip_address>
+<h2>Step 3: </h2>
 
-- On DC-1, enable ICMPv4 (ping) traffic through the Windows Firewall to allow incoming echo requests.
-<img width="1371" height="950" alt="Capture" src="https://github.com/user-attachments/assets/45d85da3-2adf-4cbb-abc1-3be42c911cdd" />
-
-- Return to Client-1 and confirm that the ping is now successful, verifying network connectivity between the client and domain controller.
 
 
 <h2>Step 4: Create Administrative User and Organizational Units in Active Directory</h2>
