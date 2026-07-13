@@ -144,6 +144,7 @@ After our VM is created, set Domain Controller’s (dc-1) NIC Private IP address
 
 - Add jane_admin to the Domain Admins security group to grant administrative privileges.
 
+<img width="1217" height="861" alt="Capture22" src="https://github.com/user-attachments/assets/c45a698a-166b-4f2c-9053-97a14a7f6d94" />
 
 
 
