@@ -138,6 +138,9 @@ After our VM is created, set Domain Controller’s (dc-1) NIC Private IP address
 
 - Username: jane_admin
 
+- <img width="858" height="663" alt="Capturr21" src="https://github.com/user-attachments/assets/e7e59992-a369-4b31-812b-b02a3c7f3adf" />
+
+
 - Add jane_admin to the Domain Admins security group to grant administrative privileges.
 <img width="591" height="534" alt="Capture8" src="https://github.com/user-attachments/assets/c4d2cc8c-ee1d-4578-a28c-d0bf09656e9f" />
 
