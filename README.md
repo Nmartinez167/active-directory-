@@ -57,11 +57,29 @@ After our VM is created, set Domain Controller’s (dc-1) NIC Private IP address
 
 - next we will be logging into our virtual machine to (dc-1) using remote desktop connection this is the virtual machine we will be using as a domain controller we do that by taking the I.P adress from our azure portal then inputing the username and password we created earlier.
 
+<img width="1877" height="607" alt="Screenshot 2026-07-13 112549" src="https://github.com/user-attachments/assets/7e95a0fa-ca14-4f35-bed5-919977a8ddf8" />
 
-<img width="1711" height="545" alt="ppppppppp" src="https://github.com/user-attachments/assets/9d0e72fa-031d-4115-869c-ba8db848e507" />
+<img width="1517" height="845" alt="Screenshot 2026-07-13 112947" src="https://github.com/user-attachments/assets/0ec387dc-42d8-4706-b578-d2ca178eefce" />
 
+<img width="687" height="536" alt="Screenshot 2026-07-13 113042" src="https://github.com/user-attachments/assets/9ffbb54e-d477-4ae2-8691-aa65d5fb6a34" />
 
-- After our virtual machines are created, set Client-1’s DNS settings to DC-1’s Private IP address this will alow a connection between both virtual machines.
+ -Since its our first time logging in we will get this security prompt click yes and we will be connected to our domain controllers virtual machine (dc-1)
+ 
+<img width="1576" height="1007" alt="Capture" src="https://github.com/user-attachments/assets/a551088b-220e-4eec-8712-ed306b0ea8c4" />
+
+-We succesfully connected to our virtual machine now we will disable our windows firewall using the comman "wf.msc" we are disabling to be able to send out a virtual continous ping to ensure both our virtual machines are able to connect to eachother.
+
+<img width="1404" height="1020" alt="Capture2" src="https://github.com/user-attachments/assets/b517c55b-0104-4abc-8224-03484c7a5bf8" />
+
+<img width="680" height="671" alt="Capture3" src="https://github.com/user-attachments/assets/51e773c4-a7ba-4161-8bcb-5c5c65e04479" />
+
+-the next step is too set Client-1’s DNS settings to DC-1’s Private IP address within our azure portal we go to client-1 NIC and paste dc-1 private address
+
+<img width="1211" height="887" alt="dns" src="https://github.com/user-attachments/assets/1dd1f696-7e0e-46d4-a089-2e1f0bb4f91c" />
+
+<img width="1247" height="932" alt="dns2" src="https://github.com/user-attachments/assets/dfe77cb1-de80-4544-a4f3-92a8ea14fba9" />
+
+<img width="1455" height="942" alt="dns3" src="https://github.com/user-attachments/assets/bddebb2e-170b-406c-8f05-ff5bb8563c9c" />
 
 
 <h2>Step 2: Verify Connectivity Between Client and Domain Controller</h2>
