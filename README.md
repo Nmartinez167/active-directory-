@@ -81,6 +81,13 @@ After our VM is created, set Domain Controller’s (dc-1) NIC Private IP address
 
 <img width="1455" height="942" alt="dns3" src="https://github.com/user-attachments/assets/bddebb2e-170b-406c-8f05-ff5bb8563c9c" />
 
+-For the DNS changes to take affect we will restart our virtual machine Dc-1, and then log back in to our windows virtual machine (client-1) We will be sending a ping to eunsure connectivity is established between both virtual machines.
+
+-Once logged in to client-1 windows machine open up powershell and run the command Ping along with dc-1 private i.p adress (ping 10.0.0.4)
+
+ <img width="1283" height="706" alt="replyyy" src="https://github.com/user-attachments/assets/ab681b5e-7b6b-460c-98ad-065f03ff1ca3" />
+
+-We can see we got a reply from dc-1 confirming a succesfull connection between both virtual machines.
 
 <h2>Step 2: Verify Connectivity Between Client and Domain Controller</h2>
 <ul>
