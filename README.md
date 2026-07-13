@@ -115,21 +115,21 @@ After our VM is created, set Domain Controller’s (dc-1) NIC Private IP address
 
 <img width="981" height="887" alt="nnnnjnjnjnn" src="https://github.com/user-attachments/assets/996c2818-1b05-461e-b0e2-78a426806969" />
 
-<h2>Step 3: </h2>
 
-
-
-<h2>Step 4: Create Administrative User and Organizational Units in Active Directory</h2>
+<h2>Step 3: Create Administrative User and Organizational Units in Active Directory</h2>
 <ul>
 - Open Active Directory Users and Computers (ADUC) on DC-1.
+
+  <img width="1181" height="754" alt="Capture12" src="https://github.com/user-attachments/assets/f753062c-f90c-4d0b-8345-c41422fd2c5b" />
 
 - Create the following Organizational Units (OUs) to structure directory objects:
 
 - _EMPLOYEES – for general employee user accounts
 
-- _ADMINS – for administrative accounts
+<img width="724" height="611" alt="Capture14" src="https://github.com/user-attachments/assets/8253aa91-adf9-4c0a-8deb-af32294893e3" />
 
-- _CLIENTS – for client-specific resources or users
+- _ADMINS – for administrative accounts
+- 
 <img width="531" height="367" alt="Capture7" src="https://github.com/user-attachments/assets/05f4cb7f-aec0-4866-8f69-8625231a8f6a" />
 
 - Within the _ADMINS OU, create a new user account:
