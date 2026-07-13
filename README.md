@@ -91,6 +91,15 @@ After our VM is created, set Domain Controller’s (dc-1) NIC Private IP address
 
 <h2>Step 2: Deploy and install Active Directory</h2>
 
+-within the server manager dashboard in our domain contollers virtual machine (dc-1) we navigate to the add roles and features tab. 
+
+<img width="1375" height="1023" alt="Capture4" src="https://github.com/user-attachments/assets/f6b5c0b8-3c85-49d5-8503-1fe5ddd2c68e" />
+
+<img width="1341" height="761" alt="Capture5" src="https://github.com/user-attachments/assets/b7a157c9-38f2-408e-b288-791979bc8923" />
+
+<img width="1074" height="745" alt="Capture6" src="https://github.com/user-attachments/assets/6498ff13-8592-416e-a8b3-355eed4cc315" />
+
+<img width="1336" height="800" alt="Capture7" src="https://github.com/user-attachments/assets/e997eae4-391c-4924-9016-6af19ae14984" />
 
   
 <h2>Step 3: Install and Configure Active Directory</h2>
