@@ -167,6 +167,11 @@ After our VM is created, set Domain Controller’s (dc-1) NIC Private IP address
 
  For better organization, create an OU named _CLIENTS and move Client-1 into it.
 
+<img width="1182" height="813" alt="CCCCCCCCCCC" src="https://github.com/user-attachments/assets/f3fe7c76-a12e-4dcd-aceb-fec440fd94c1" />
+
+<img width="1056" height="730" alt="DDDDDDDDDDD" src="https://github.com/user-attachments/assets/ecc0477b-5244-4d5d-99a1-71dc7ed19302" />
+
+
 <h2>Step 6: Enable Remote Desktop Access for Domain Users via Group Policy</h2>
 <ul><img width="780" height="497" alt="Screenshot 2025-10-23 135330" src="https://github.com/user-attachments/assets/3f2c30d2-1e12-4111-b176-3b1b2acd0613" />
 
