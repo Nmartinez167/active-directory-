@@ -147,22 +147,25 @@ After our VM is created, set Domain Controller’s (dc-1) NIC Private IP address
 <img width="1217" height="861" alt="Capture22" src="https://github.com/user-attachments/assets/c45a698a-166b-4f2c-9053-97a14a7f6d94" />
 
 
-
-- Log out of DC-1 and sign back in using the new domain admin account:
-
-- mydomain.com\jane_admin
-
 <h2>Step 5: Join Client-1 to the Domain</h2>
 <ul>
-- In the Azure Portal, update Client-1's DNS server settings to point to DC-1's private IP address.
 
-- Restart Client-1 from the portal to apply the new DNS configuration.
+- Log out of DC-1 and sign back in using the new domain admin account: mydomain.com\jane_admin
 
-- Log in to Client-1 using the local administrator account (labuser), and join the machine to the domain mydomain.com.
+- Log in to Client-1 as the original local admin (labuser) and join it to the domain.
 
-- After a successful domain join, restart the VM and verify that Client-1 now appears in Active Directory Users and Computers (ADUC) under the Computers container.
+<img width="1341" height="1023" alt="tttttttttttttt" src="https://github.com/user-attachments/assets/4ec13030-de1b-4b94-a957-f1f54240bccf" />
 
-- (Optional) For better organization, create an OU named _CLIENTS and move Client-1 into it.
+<img width="687" height="662" alt="mydomain" src="https://github.com/user-attachments/assets/135cb99b-6d41-4a9f-b68b-4079782ecac1" />
+
+<img width="1687" height="1002" alt="dmnnn" src="https://github.com/user-attachments/assets/562381ed-df4c-4db4-8b1f-e1d046f1c591" />
+
+
+- After a successful domain join, restart the VM and verify that Client-1 now appears in Active Directory Users and Computers under the Computers container in our dc-1 VM (domain controller)
+
+<img width="1163" height="735" alt="bbbbbbbbbbbbbb" src="https://github.com/user-attachments/assets/ce35f5c6-facc-49e6-b6c1-a1f37b7ace45" />
+
+ For better organization, create an OU named _CLIENTS and move Client-1 into it.
 
 <h2>Step 6: Enable Remote Desktop Access for Domain Users via Group Policy</h2>
 <ul><img width="780" height="497" alt="Screenshot 2025-10-23 135330" src="https://github.com/user-attachments/assets/3f2c30d2-1e12-4111-b176-3b1b2acd0613" />
