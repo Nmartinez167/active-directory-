@@ -173,7 +173,23 @@ After our VM is created, set Domain Controller’s (dc-1) NIC Private IP address
 
 
 <h2>Step 6: Enable Remote Desktop Access for Domain Users via Group Policy</h2>
-<ul><img width="780" height="497" alt="Screenshot 2025-10-23 135330" src="https://github.com/user-attachments/assets/3f2c30d2-1e12-4111-b176-3b1b2acd0613" />
+
+
+-Go to system settings and click on the remote desktop tab in dc-1 as you can see we are logged in as administrator jane doe.
+
+<img width="1338" height="1016" alt="remote desktop" src="https://github.com/user-attachments/assets/6ad01e46-72e9-4487-b24b-960f3a75f16d" />
+
+
+<img width="1396" height="1013" alt="jane doe" src="https://github.com/user-attachments/assets/c6847ab5-ee83-4b6a-913e-1a39c68e46cd" />
+
+>
+<img width="1305" height="1000" alt="rererereer" src="https://github.com/user-attachments/assets/08faee75-7ce5-476b-ab6b-792f34cafe85" />
+
+
+<img width="891" height="811" alt="rorororor" src="https://github.com/user-attachments/assets/b2b8518f-3101-41e0-85e6-58d38aa0b8c3" />
+
+-we are allowing all the domain users to be able to use remote desktop this
+
 
 - Create and apply a Group Policy Object (GPO) targeting the _CLIENTS and _EMPLOYEES Organizational Units to allow domain users to connect via Remote Desktop.
 
