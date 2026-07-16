@@ -191,12 +191,6 @@ After our VM is created, set Domain Controller’s (dc-1) NIC Private IP address
 -we are allowing all the domain users to be able to use remote desktop this
 
 
-- Create and apply a Group Policy Object (GPO) targeting the _CLIENTS and _EMPLOYEES Organizational Units to allow domain users to connect via Remote Desktop.
-
-- This approach ensures centralized management of Remote Desktop settings, eliminating the need for manual configuration on each individual client machine.
-
-- To confirm the policy is applied, run the following command on affected client machines:
-
 <h2>Step 7: Automate User Account Creation with PowerShell and Verify Access</h2>
 <ul>
 - Log in to DC-1 as jane_admin, and launch PowerShell ISE with administrative privileges.
