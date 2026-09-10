@@ -21,7 +21,10 @@ This repository demonstrates the implementation of an on-premises-style Active D
 
 <h2>Step 1: Provision Azure Resources</h2>
 <ul>
-<li><strong>First we create a resource group named Active-directory for future reference and we will also create a virtual machine, make sure the azure Virtual machine is set the resource group we just created. "Active-directory"
+
+ 
+  
+  <li><strong>First we create a resource group named Active-directory for future reference and we will also create a virtual machine, make sure the azure Virtual machine is set the resource group we just created. "Active-directory"
 
 <img width="948" height="631" alt="Screenshot 2026-03-05 094917" src="https://github.com/user-attachments/assets/c480df36-c0a3-4a40-8b54-2db5850590a3" />
 
@@ -30,7 +33,7 @@ This repository demonstrates the implementation of an on-premises-style Active D
 
 <img width="966" height="878" alt="trrrrr" src="https://github.com/user-attachments/assets/3632ef57-efe2-4a64-998c-01250713e160" />
 
-<li><strong> Create a Windows Server 2022 virtual machine to serve as the Domain Controller, and name it DC-1.
+  -<li><strong> Create a Windows Server 2022 virtual machine to serve as the Domain Controller, and name it DC-1.
 make sure to set the correct resourse group and region when creating the virtual machine.
 
 <img width="1063" height="907" alt="activednewski" src="https://github.com/user-attachments/assets/df992425-34a9-453d-ad35-18b629dae5f8" />
