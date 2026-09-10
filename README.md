@@ -150,7 +150,7 @@ make sure to set the correct resourse group and region when creating the virtual
 <img width="1217" height="861" alt="Capture22" src="https://github.com/user-attachments/assets/c45a698a-166b-4f2c-9053-97a14a7f6d94" />
 
 
-<h2>Step 5: Join Client-1 to the Domain</h2>
+<h2>Step 4: Join Client-1 to the Domain</h2>
 <ul>
 
 - Log out of DC-1 and sign back in using the new domain admin account: mydomain.com\jane_admin
@@ -175,7 +175,7 @@ make sure to set the correct resourse group and region when creating the virtual
 <img width="1056" height="730" alt="DDDDDDDDDDD" src="https://github.com/user-attachments/assets/ecc0477b-5244-4d5d-99a1-71dc7ed19302" />
 
 
-<h2>Step 6: Enable Remote Desktop Access for Domain Users via Group Policy</h2>
+<h2>Step 5: Enable Remote Desktop Access for Domain Users via Group Policy</h2>
 
 
 -Go to system settings and click on the remote desktop tab in dc-1 as you can see we are logged in as administrator jane doe.
@@ -194,7 +194,7 @@ make sure to set the correct resourse group and region when creating the virtual
 -we are allowing all the domain users to be able to use remote desktop this
 
 
-<h2>Step 7: Automate User Account Creation with PowerShell and Verify Access</h2>
+<h2>Step 6: Automate User Account Creation with PowerShell and Verify Access</h2>
 <ul>
 - Log in to DC-1 as jane_admin, and launch PowerShell ISE with administrative privileges.
 
