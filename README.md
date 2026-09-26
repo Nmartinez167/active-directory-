@@ -19,46 +19,21 @@ This repository demonstrates the implementation of an on-premises-style Active D
 - Windows 10 (21H2)
 
 
-<h2>Step 1: Provision Azure Resources</h2>
-<ul>
+<h2>Deployment and Configuration Steps</h2>
 
- 
-  
-  <li><strong>First we create a resource group named Active-directory for future reference and we will also create a virtual machine, make sure the azure Virtual machine is set the resource group we just created. "Active-directory"
-
-<img width="50%" height="50%" alt="Screenshot 2026-03-05 094917" src="https://github.com/user-attachments/assets/c480df36-c0a3-4a40-8b54-2db5850590a3" />
-
-<img width="50%" height="50%" alt="Screenshot 2026-03-05 095303" src="https://github.com/user-attachments/assets/edca337a-d8c7-4ee7-8a2e-8087c45c1a30" />
-
-
-<img width="50%" height="50%" alt="trrrrr" src="https://github.com/user-attachments/assets/3632ef57-efe2-4a64-998c-01250713e160" />
-
-  -<li><strong> Create a Windows Server 2022 virtual machine to serve as the Domain Controller, and name it DC-1.
-make sure to set the correct resourse group and region when creating the virtual machine.
-
-<img width="50%" height="50%" alt="activednewski" src="https://github.com/user-attachments/assets/df992425-34a9-453d-ad35-18b629dae5f8" />
-
-<li><strong> Make sure to also set a safe username and password as well to able to login to our virtual machine and later install active directory to it, also be sure to put it in the virtual network we created.
-
-<img width="50%" height="50%" alt="nelliii" src="https://github.com/user-attachments/assets/14bae4fc-74a0-4523-9a09-224fee35a5a3" />
-
-<img width="50%" height="50%" alt="vnet" src="https://github.com/user-attachments/assets/f5d39909-56ed-47c8-b17a-cb702052db00" />
-
-<li><strong> Create a Windows 11 virtual machine named Client-1 within the same Resource Group and VNet as DC-1
-
-  <img width="50%" height="50%" alt="yujjjjjj" src="https://github.com/user-attachments/assets/683e132d-1ce1-4200-a71f-2dcf84d3b555" />
-
-
-<li><strong> After our VM is created, set Domain Controller’s (dc-1) NIC Private IP address to be static
-<img
-
-<img width="50%" height="50%" alt="image" src="https://github.com/user-attachments/assets/860a7dd0-e03d-4b63-9912-cb3d30a10a72" />
-
-<img width="50%" height="50%" alt="image" src="https://github.com/user-attachments/assets/5c2e7bb5-e923-485c-b2da-e3040153e45a" />
-
-<img width="50%" height="50%" alt="static" src="https://github.com/user-attachments/assets/029d745d-e64a-4c9b-8ed7-c8970f41f9cd" />
-
-<li><strong> Next we will be logging into our virtual machine to (dc-1) using remote desktop connection this is the virtual machine we will be using as a domain controller we do that by taking the I.P adress from our azure portal then inputing the username and password we created earlier.
+**1. Install Active Directory**
+- Login to `DC-1`
+  - Use the credentials:
+    - Username: 
+    - Password: 
+- Install Active Directory Domain Services
+  - Open Server Manager and install the Active Directory Domain Services role.
+- Promote as a Domain Controller
+  - Set up a new forest with the domain name `mydomain.com` (or any preferred name).
+  - Restart the server after promotion.
+- Login to `DC-1` as Domain User
+  - Use the credentials:
+    - Username: `mydomain.com\`
 
 <img width="50%" height="50%" alt="Screenshot 2026-07-13 112549" src="https://github.com/user-attachments/assets/7e95a0fa-ca14-4f35-bed5-919977a8ddf8" />
 
@@ -118,12 +93,22 @@ make sure to set the correct resourse group and region when creating the virtual
 
 <img width="50%" height="50%" alt="nnnnjnjnjnn" src="https://github.com/user-attachments/assets/996c2818-1b05-461e-b0e2-78a426806969" />
 
-
-<h2>Step 3: Create Administrative User and Organizational Units in Active Directory</h2>
-<ul>
-<li><strong> Open Active Directory Users and Computers (ADUC) on DC-1.
-
-  <img width="50%" height="50%" alt="Capture12" src="https://github.com/user-attachments/assets/f753062c-f90c-4d0b-8345-c41422fd2c5b" />
+**2. Create a Domain Admin User**
+- Open Active Directory Users and Computers (ADUC)
+- Create Organizational Units (OUs)
+  - Create an OU named `_EMPLOYEES`.
+  - Create another OU named `_ADMINS`.
+- Create a New Employee User
+  - Add a user named "Jane Doe" with the following details:
+    - Username: `jane_admin`
+    - Password: `Cyberlab123!`
+- Add User to Security Group
+  - Add `jane_admin` to the Domain Admins Security Group.
+- Log in as `jane_admin`
+  - Log out from `DC-1` and log back in using:
+    - Username: `mydomain.com\jane_admin`
+    - Password: `Cyberlab123!`
+  - Use `jane_admin` as the admin account from this point forward.12" src="https://github.com/user-attachments/assets/f753062c-f90c-4d0b-8345-c41422fd2c5b" />
 
 - Create the following Organizational Units (OUs) to structure directory objects:
 
@@ -150,8 +135,17 @@ make sure to set the correct resourse group and region when creating the virtual
 <img width="50%" height="50%" alt="Capture22" src="https://github.com/user-attachments/assets/c45a698a-166b-4f2c-9053-97a14a7f6d94" />
 
 
-<h2>Step 4: Join Client-1 to the Domain</h2>
-<ul>
+Join `Client-1` to the Domain**
+- Login to `Client-1` as Local Admin
+- Join `Client-1` to the Domain
+  - Change the system properties to join the domain `mydomain.com.`
+  - Restart `Client-1` after joining.
+- Verify in ADUC
+  - Log in to `DC-1` and confirm that `Client-1` appears in the Active Directory Users and Computers tool.
+- Organize `Client-1` in ADUC
+  - Create an OU named `_CLIENTS`.
+  - Drag `Client-1` into the `_CLIENTS OU`.
+
 
 - Log out of DC-1 and sign back in using the new domain admin account: mydomain.com\jane_admin
 
@@ -175,7 +169,20 @@ make sure to set the correct resourse group and region when creating the virtual
 <img width="50%" height="50%" alt="DDDDDDDDDDD" src="https://github.com/user-attachments/assets/ecc0477b-5244-4d5d-99a1-71dc7ed19302" />
 
 
-<h2>Step 5: Enable Remote Desktop Access for Domain Users via Group Policy</h2>
+
+**4. Setup Remote Desktop for Non-Administrative Users on Client-1**
+
+- Login to `Client-1` as `mydomain.com\jane_admin`
+  - Use the credentials for `jane_admin`.
+- Allow Domain Users Access to Remote Desktop
+  - Open system properties.
+  - Click on "Remote Desktop."
+  - Allow "domain users" access to Remote Desktop.
+- Test Remote Desktop Access
+  - You can now log into `Client-1` as a normal, non-administrative user.
+   -Note: Typically, this configuration is managed using Group Policy for multiple systems.
+
+
 
 
 -Go to system settings and click on the remote desktop tab in dc-1 as you can see we are logged in as administrator jane doe.
@@ -194,8 +201,22 @@ make sure to set the correct resourse group and region when creating the virtual
 -we are allowing all the domain users to be able to use remote desktop this
 
 
-<h2>Step 6: Automate User Account Creation with PowerShell and Verify Access</h2>
-<ul>
+Step 6
+- Login to `DC-1` as `jane_admin`
+  - Use the credentials for `jane_admin`.
+- Open PowerShell ISE as Administrator
+  - Launch PowerShell ISE with administrative privileges.
+- Create Users with a Script
+  - Create a new file and paste the provided [script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1) into it.
+  - Run the script to create multiple user accounts.
+- Verify Accounts in ADUC
+  - Open Active Directory Users and Computers (ADUC).
+  - Observe the newly created accounts in the `_EMPLOYEES OU`.
+- Test Login
+  - Attempt to log into `Client-1` using one of the newly created accounts.
+  - Ensure the account password matches what is specified in the script.
+
+
 - Log in to DC-1 as jane_admin, and launch PowerShell ISE with administrative privileges.
 
 - Write or run a PowerShell script to automate the creation of multiple Active Directory user accounts, specifying the appropriate OU placement for each user.
