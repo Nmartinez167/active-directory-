@@ -41,33 +41,9 @@ This repository demonstrates the implementation of an on-premises-style Active D
 
 <img width="50%" height="50%" alt="Screenshot 2026-07-13 113042" src="https://github.com/user-attachments/assets/9ffbb54e-d477-4ae2-8691-aa65d5fb6a34" />
 
- <li><strong> Since its our first time logging in we will get this security prompt click yes and we will be connected to our domain controllers virtual machine (dc-1)
  
 <img width="50%" height="50%" alt="Capture" src="https://github.com/user-attachments/assets/a551088b-220e-4eec-8712-ed306b0ea8c4" />
 
-<li><strong> We succesfully connected to our virtual machine now we will disable our windows firewall using the comman "wf.msc" we are disabling to be able to send out a virtual continous ping to ensure both our virtual machines are able to connect to eachother.
-
-<img width="50%" height="50%" alt="Capture2" src="https://github.com/user-attachments/assets/b517c55b-0104-4abc-8224-03484c7a5bf8" />
-
-<img width="50%" height="50%" alt="Capture3" src="https://github.com/user-attachments/assets/51e773c4-a7ba-4161-8bcb-5c5c65e04479" />
-
-<li><strong> The next step is too set Client-1’s DNS settings to DC-1’s Private IP address within our azure portal we go to client-1 NIC and paste dc-1 private address
-
-<img width="50%" height="50%" alt="dns" src="https://github.com/user-attachments/assets/1dd1f696-7e0e-46d4-a089-2e1f0bb4f91c" />
-
-<img width="50%" height="50%" alt="dns2" src="https://github.com/user-attachments/assets/dfe77cb1-de80-4544-a4f3-92a8ea14fba9" />
-
-<img width="50%" height="50%" alt="50%" src="https://github.com/user-attachments/assets/bddebb2e-170b-406c-8f05-ff5bb8563c9c" />
-
-<li><strong> For the DNS changes to take affect we will restart our virtual machine Dc-1, and then log back in to our windows virtual machine (client-1) We will be sending a ping to eunsure connectivity is established between both virtual machines.
-
-<li><strong> Once logged in to client-1 windows machine open up powershell and run the command Ping along with dc-1 private i.p adress (ping 10.0.0.4)
-
- <img width="50%" height="50%" alt="replyyy" src="https://github.com/user-attachments/assets/ab681b5e-7b6b-460c-98ad-065f03ff1ca3" />
-
-<li><strong> We can see we got a reply from dc-1 confirming a succesfull connection between both virtual machines.
-
-<h2>Step 2: Deploy and install Active Directory</h2>
 
 <li><strong> Within the server manager dashboard in our domain contollers virtual machine (dc-1) we navigate to the add roles and features tab. 
 
